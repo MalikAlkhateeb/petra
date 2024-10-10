@@ -1,0 +1,111 @@
+footer {
+    background: #512532;
+    padding-top: 56px;
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 34px;
+    }
+
+    .footerStart {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .footerEnd {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        &-top {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 21px;
+
+            &:not(:first-child) {
+                padding-inline-start: 21px;
+                border-inline-start: 1px solid rgba(255, 255, 255, 0.30);
+            }
+
+            .infoGroup {
+                display: flex;
+                flex-direction: column;
+
+                label {
+                    color: #FFF;
+                    font-size: 12px;
+                    font-weight: 800;
+                    line-height: normal;
+                }
+
+                div {
+                    color: #FFF;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: normal;
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    flex-wrap: wrap;
+
+                    span {
+                        
+                    }
+
+                    bdi {
+                        direction: ltr !important;
+                    }
+                }
+
+                small {
+                    color: #C0C0C0;
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: normal;
+                }
+            }
+        }
+
+        &-bottom {
+            min-height: 52px;
+            display: flex;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.30);
+
+            label {
+                color: rgba(255, 255, 255, 0.60);
+                font-size: 14px;
+                font-weight: 500;
+                line-height: normal;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1366px) {}
+
+@media only screen and (max-width: 992px) { }
+
+@media only screen and (max-width: 768px) {}
+
+@media only screen and (max-width: 600px) {
+    footer {
+        .footerEnd { 
+            &-top { 
+                justify-content: center !important;
+                .infoGroup {
+                    justify-content: center !important;
+
+                    label, small {
+                        text-align: center;
+                    }
+                    div {
+                        justify-content: center !important;
+                    }
+                }
+            }
+        }
+    }
+}

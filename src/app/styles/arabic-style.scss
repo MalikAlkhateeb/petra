@@ -1,0 +1,45 @@
+body.ltr {
+    direction: rtl;
+  
+    * {
+      direction: rtl;
+    }
+
+    .p-carousel-items-container {
+        direction: ltr !important;
+    }
+
+    .swiperSlider { 
+      
+        .pCarousel {
+    
+            .p-element.p-carousel-prev, .p-element.p-carousel-next {
+                left: 40px !important;
+                right: unset !important;
+            }
+    
+            .p-element.p-carousel-prev {
+                left: 0 !important;
+                right: unset !important;
+            }
+        }
+    }
+
+    .about {
+        .container {
+            .frame {
+                left: unset !important;
+                right: -180px !important;
+            }
+        }
+    }
+
+    .ourPricing {
+        .container {
+            .frame {
+                right: unset !important;
+                left: -180px !important;
+            }
+        }
+    }
+}

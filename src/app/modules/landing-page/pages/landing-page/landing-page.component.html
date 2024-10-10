@@ -1,0 +1,551 @@
+
+<div class="LandingPage">
+ 
+    <section class="coverContainer" #home>
+ 
+        <div class="shade"></div>
+        <div class="container">
+ 
+            <span>
+                4 Days 3 Nights
+            </span>
+            <div>
+
+                <label class="large">
+                    Jordan in a Nutshell
+                </label>
+                <label class="small">
+                    Summer Promotion Until September 31 st, 2024
+                </label>
+
+            </div>
+            <button class="font-size-16px min-width-171px height48 white">Book now</button>
+
+        </div>
+        <img class="clouds" [src]="'/assets/images/clouds.png'"/>
+
+    </section>
+
+    <section class="overView" #overView>
+
+        <img class="linear" [src]="'/assets/images/linear.png'"/>
+        <div class="container">
+
+            <div class="sectionTitle">
+
+                <span>Overview</span>
+                <label>Cultural Heritage & Natural Wonders</label>
+
+            </div>
+            <label class="hint">
+                Embark on an enchanting voyage through Jordan, where ancient civilizations' whispers blend with nature's awe-inspiring splendor. This immersive journey takes you from the vibrant streets of Amman to the legendary city of Petra, the serene waters of the Dead Sea, and the sacred heights of Mt. Nebo. Each day unveils a new chapter of Jordan's timeless heritage, offering a rich tapestry of historical marvels and natural wonders. Dive into the heart of this magical land and create memories that will echo for eternity.
+            </label>
+            <div class="infoContainer">
+
+                <div class="infoContainer-row">
+
+                    <img [src]="'/assets/images/timer.png'"/>
+                    <label>
+                        4 Days 3 Nights
+                    </label>
+
+                </div>
+                <div class="infoContainer-row">
+
+                    <img [src]="'/assets/images/calendar-2.png'"/>
+                    <label>
+                        June - End of September
+                    </label>
+
+                </div>
+                <div class="infoContainer-row">
+
+                    <img [src]="'/assets/images/buildings.png'"/>
+                    <label>
+                        3 Star, 4 Star, 5 Star
+                    </label>
+
+                </div>
+                <div class="infoContainer-row">
+
+                    <img [src]="'/assets/images/reserve.png'"/>
+                    <label>
+                        Daily Breakfast Lunch in Dead Sea
+                    </label>
+
+                </div>
+
+            </div>
+            <div class="swiperSlider">
+
+                <label class="swiperSlider-title">Tour Highlights</label>
+                <p-carousel class="pCarousel" [autoplayInterval]="autoplayInterval" [value]="items" [numVisible]="4"
+                [numScroll]="4" [responsiveOptions]="responsiveOptions" >
+                
+                    <ng-template let-item pTemplate="item">
+
+                        <div class="swiperSlider-item">
+
+                            <img src="/assets/images/{{item.img}}.png"/>
+                            <label>{{item.title}}</label>
+
+        
+                        </div>
+                        
+                    </ng-template>
+                
+                </p-carousel>
+                
+            </div>
+            <div class="bookNowContainer">
+
+                <label>Book Now</label>
+                <div>
+
+                    <span>
+                        After a hearty breakfast, enjoy a leisurely morning in Amman, perhaps exploring its vibrant markets or savoring a final Jordanian coffee.
+                    </span>
+                    <button>Book now</button>
+
+                </div>
+
+            </div>
+
+        </div>
+        <img class="clouds" [src]="'/assets/images/clouds.png'"/>
+
+    </section>
+
+    <section class="about" #about>
+
+        <img class="linear" [src]="'/assets/images/linear-2.png'"/>
+        <div class="container">
+
+            <img class="frame" [src]="'/assets/images/Frame.png'"/>
+            <div class="sectionTitle">
+
+                <span>About Itinerary</span>
+                <label class="cursor-pointer flex" [routerLink]="['/days-plan']" >A fun Itinerary for you and your family</label>
+
+            </div>
+            <div class="daysPlan">
+                
+                <div class="daysPlan-tabs">
+
+                    <div class="daysPlan-tabs-item" (click)="selcetTab(tab)" [class.active]="tab.isSelcted" *ngFor="let tab of tabs">
+                        {{tab.name}}            
+                    </div>
+
+                </div>
+                <div class="daysPlan-container">
+
+                    <ng-container *ngIf="tabsValue == 1">
+
+                        <div class="daysPlan-container-part daysPlan-container-part_flex2">
+
+                            <label>
+                                Day 1: Arrival in Jordan – Amman City Tour – Petra
+                            </label>
+                            <small>
+                                Salam, welcome to Jordan! Upon your arrival at Queen Alia International Airport, our friendly local representative will greet you and assist with your visa, baggage, and customs procedures. Begin your journey with an enlightening city tour of Amman, exploring its bustling streets, vibrant markets, the Citadel, and the Roman Theater. After immersing yourself in the lively capital, transfer to the mystical city of Petra, where you'll stay overnight, poised to discover its hidden treasures.
+                            </small>
+                            <span>Meals: Breakfast</span>
+
+                        </div>
+                        <div class="daysPlan-container-part daysPlan-container-part_flex1">
+                            <img [src]="'/assets/images/plan1.png'"/>
+                        </div>
+
+                    </ng-container>
+                    <ng-container *ngIf="tabsValue == 2">
+
+                        <div class="daysPlan-container-part daysPlan-container-part_flex2">
+
+                            <label>
+                                Day 2: Petra Hotel – Petra Guided Tour – Petra Hotel
+                            </label>
+                            <small>
+                                Awaken in Petra for an unforgetp-table exploration. With an English-speaking guide, traverse the Siq to the Treasury. Discover the Rose City's secrets, including the Street of Facades, Roman Theatre, and Royal Tombs. Explore further to the Byzantine Church, Temple of the Winged Lions, and Great Temple. In the afternoon, delve deeper or ascend to the Monastery and High Place of Sacrifice. Return to your hotel filled with Petra's timeless magic.
+                            </small>
+                            <span>Meals: Breakfast - Guide: 2 hr Local Guide</span>
+
+                        </div>
+                        <div class="daysPlan-container-part daysPlan-container-part_flex1">
+                            <img [src]="'/assets/images/plan2.png'"/>
+                        </div>
+
+                    </ng-container>
+                    <ng-container *ngIf="tabsValue == 3">
+
+                        <div class="daysPlan-container-part daysPlan-container-part_flex2">
+
+                            <label>
+                                Day 3: Petra – Dead Sea (Entrance + Lunch) – Mt. Nebo – Madaba – Amman
+                            </label>
+                            <small>
+                                Bid farewell to Petra and journey to the Dead Sea for a unique floating experience in its mineral-rich waters, followed by a buffet lunch. Ascend to Mt. Nebo, where Moses viewed the Promised Land, and take in the panoramic vistas. Continue to Madaba, known for its 6th-century mosaic map at St. George Church. End your day returning to Amman, reflecting on the spiritual and historical depth of your journey.
+                            </small>
+                            <span>Meals: Breakfast, Lunch</span>
+
+                        </div>
+                        <div class="daysPlan-container-part daysPlan-container-part_flex1">
+                            <img [src]="'/assets/images/plan3.png'"/>
+                        </div>
+
+                    </ng-container>
+                    <ng-container *ngIf="tabsValue == 4">
+
+                        <div class="daysPlan-container-part daysPlan-container-part_flex2">
+
+                            <label>
+                                Day 4: Amman – Amman Departure
+                            </label>
+                            <small>
+                                After a hearty breakfast, enjoy a leisurely morning in Amman, perhaps exploring its vibrant markets or savoring a final Jordanian coffee. As your journey comes to a close, you will be transferred to Queen Alia International Airport for your departure. This marks the end of your journey through Jordan's timeless landscape, leaving you with memories to cherish forever.
+                            </small>
+                            <span>Meals: Breakfast</span>
+
+                        </div>
+                        <div class="daysPlan-container-part daysPlan-container-part_flex1">
+                            <img [src]="'/assets/images/plan4.png'"/>
+                        </div>
+
+                    </ng-container>
+
+                </div>
+
+            </div>
+            <div class="bookNowContainer">
+
+                <label>Book Now</label>
+                <div>
+
+                    <span>
+                        After a hearty breakfast, enjoy a leisurely morning in Amman, perhaps exploring its vibrant markets or savoring a final Jordanian coffee.
+                    </span>
+                    <button class="font-size-16px min-width-171px height48 white">Book now</button>
+
+                </div>
+
+            </div>
+ 
+        </div>
+        <img class="linearBottom" [src]="'/assets/images/linear-3.png'"/>
+
+    </section>
+
+    <section class="ourPricing" #ourPricing>
+
+        <div class="container">
+
+            <img class="frame" [src]="'/assets/images/Frame-2.png'"/>
+            <div class="sectionTitle">
+
+                <span>Our Pricing</span>
+                <label>Affordable Pricing Options for You & Your Group</label>
+
+            </div>
+            <div class="ourPricing-secGroup">
+
+                <label class="ourPricing-title">
+                    Hotels quoted subject to availability at the time of booking (or similar)
+                </label>
+                <div class="ourPricing-secGroup-end">
+
+                    <div class="ourPricing-sec ourPricing-sec_flex2 width-0">
+ 
+                        <div class="tableContainer">
+                            <div class="p-table">
+        
+                                <div class="p-table-thead">
+                                    <div class="p-table-tr">
+            
+                                        <div class="p-table-thead-th p-table-thead-th_flex2">
+                                            <span>NO. Of Person</span>
+                                        </div>
+                                        <div class="p-table-thead-th">
+                                            <span>5* Hotel</span>
+                                        </div>
+                                        <div class="p-table-thead-th">
+                                            <span>4* Hotel</span>
+                                        </div>
+                                        <div class="p-table-thead-th">
+                                            <span>3* Hotel</span>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                                <div class="p-table-tbody">
+            
+                                    <div class="p-table-tr">
+            
+                                        <div class="p-table-tbody-td p-table-tbody-td_flex2">
+                                            <span>Single Supplement</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$560</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$525</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$475</span>
+                                        </div> 
+            
+                                    </div>
+                                    <div class="p-table-tr">
+            
+                                        <div class="p-table-tbody-td p-table-tbody-td_flex2">
+                                            <span>2 Persons</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$560</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$525</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$475</span>
+                                        </div> 
+            
+                                    </div> 
+                                    <div class="p-table-tr">
+            
+                                        <div class="p-table-tbody-td p-table-tbody-td_flex2">
+                                            <span>2 Persons</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$560</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$525</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$475</span>
+                                        </div> 
+            
+                                    </div> 
+                                    <div class="p-table-tr">
+            
+                                        <div class="p-table-tbody-td p-table-tbody-td_flex2">
+                                            <span>2 Persons</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$560</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$525</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$475</span>
+                                        </div> 
+            
+                                    </div> 
+                                    <div class="p-table-tr">
+            
+                                        <div class="p-table-tbody-td p-table-tbody-td_flex2">
+                                            <span>2 Persons</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$560</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$525</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$475</span>
+                                        </div> 
+            
+                                    </div> 
+                                    <div class="p-table-tr">
+            
+                                        <div class="p-table-tbody-td p-table-tbody-td_flex2">
+                                            <span>2 Persons</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$560</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$525</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$475</span>
+                                        </div> 
+            
+                                    </div> 
+                                    <div class="p-table-tr">
+            
+                                        <div class="p-table-tbody-td p-table-tbody-td_flex2">
+                                            <span>2 Persons</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$560</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$525</span>
+                                        </div>
+                                        <div class="p-table-tbody-td">
+                                            <span>$475</span>
+                                        </div> 
+            
+                                    </div> 
+
+                                </div>
+            
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="bookNowContainer bookNowContainer_orangeMode">
+
+                        <label>Book Now</label>
+                        <div>
+        
+                            <span>
+                                After a hearty breakfast, enjoy a leisurely morning in Amman, perhaps exploring its vibrant markets or savoring a final Jordanian coffee.
+                            </span>
+                            <button class="font-size-16px min-width-171px height48 white">Book now</button>
+        
+                        </div>
+        
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="ourPricing-sec">
+
+                <label class="ourPricing-title">
+                    Hotels quoted subject to availability at the time of booking (or similar)
+                </label>
+                <div class="tableContainer">
+                    <div class="p-table">
+
+                        <div class="p-table-thead">
+                            <div class="p-table-tr">
+    
+                                <div class="p-table-thead-th">
+                                    <span>City</span>
+                                </div>
+                                <div class="p-table-thead-th">
+                                    <span>5* Hotel</span>
+                                </div>
+                                <div class="p-table-thead-th">
+                                    <span>4* Hotel</span>
+                                </div>
+                                <div class="p-table-thead-th">
+                                    <span>3* Hotel</span>
+                                </div>
+                                <div class="p-table-thead-th">
+                                    <span>NO. Of Nights</span>
+                                </div>
+    
+                            </div>
+                        </div>
+                        <div class="p-table-tbody">
+    
+                            <div class="p-table-tr">
+    
+                                <div class="p-table-tbody-td">
+                                    <span>Amman</span>
+                                </div>
+                                <div class="p-table-tbody-td">
+                                    <span>Radisson or Crown Plaza</span>
+                                </div>
+                                <div class="p-table-tbody-td">
+                                    <span>Sulaf Luxury</span>
+                                </div>
+                                <div class="p-table-tbody-td">
+                                    <span>Olive</span>
+                                </div>
+                                <div class="p-table-tbody-td">
+                                    <span>1</span>
+                                </div>
+    
+                            </div>
+                            <div class="p-table-tr">
+    
+                                <div class="p-table-tbody-td">
+                                    <span>Petra</span>
+                                </div>
+                                <div class="p-table-tbody-td">
+                                    <span>the Old Village</span>
+                                </div>
+                                <div class="p-table-tbody-td">
+                                    <span>Petra Boutique</span>
+                                </div>
+                                <div class="p-table-tbody-td">
+                                    <span>Edom</span>
+                                </div>
+                                <div class="p-table-tbody-td">
+                                    <span>2</span>
+                                </div>
+    
+                            </div>
+    
+                        </div>
+    
+                    </div>
+                </div>
+
+            </div>
+ 
+        </div>
+
+    </section>
+    
+    <section class="inclusions" #inclusions>
+
+        <div class="container">
+
+            <div class="sectionTitle">
+
+                <label>Inclusions</label>
+                <label class="black">We Ensuring a seamless experience</label>
+
+            </div>
+            <ul>
+                <li>Meet and assist upon arrival and departure by Jordan tours representative</li>
+                <li>Transportation as per the above-mentioned program in an A/C Modern vehicle</li>
+                <li>A professional English-Speaking driver 2-6 persons</li>
+                <li>Local English-Speaking Guide in Petra (From the visitor center up to Qaser Al Bint) 2-6 persons</li>
+                <li>Professional English-speaking guide on full day tour 7-20 pax</li>
+                <li>3 Nights’ Accommodation on chosen meal plan</li>
+                <li>A Dead Sea Resort beach access with buffet lunch.</li>
+                <li>Entrance Fees to the mentioned sites in the above program</li>
+                <li>Horse Riding in Petra for 600 meters from the visitor center till the beginning of the SIQ</li>
+                <li>One Bottle of Mineral Water each person in each day of the tour in Jordan.</li>
+                <li>Gift from Jordan Tours</li>
+                <li>Free collective visa; Upon having full passport details before the arrival by at least 7 days (for the non-restricted nationalities), otherwise they will need to pay VISA on arrival (40.00 JOD)</li>
+                <li>All applicable taxes</li>
+            </ul>
+ 
+        </div>
+
+    </section>
+
+    <section class="exclusions" #exclusions>
+
+        <div class="container">
+
+            <div class="sectionTitle">
+
+                <label>Exclusions</label>
+                <label class="black">We Ensuring a seamless experience</label>
+
+            </div>
+            <ul>
+                <li>Additional meals</li>
+                <li>Additional Drinks</li>
+                <li>Personal expenses</li>
+                <li>Any item not mentioned in the inclusions part.</li>
+                <li>Optional excursions</li>
+                <li>Flight tickets</li>
+                <li>Tips for the driver, guide hotels staff</li>
+            </ul>
+ 
+        </div>
+
+    </section>
+
+</div>

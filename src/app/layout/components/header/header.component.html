@@ -1,0 +1,73 @@
+<header>
+ 
+    <div class="headerTop container">
+
+        <img class="logo" [src]="'/assets/images/logo.png'" />
+        <div class="headerTop-center">
+
+            <div class="telImg">
+                <img class="logo" [src]="'/assets/images/call-calling.png'" />
+            </div>
+            <div class="telInfo">
+
+                <div class="telInfo-top">
+
+                    <bdi>+962 7 9883 8838</bdi>
+                    <span>-</span>
+                    <bdi>+962 798456666</bdi>
+
+                </div>
+                <div class="telInfo-bottom">
+
+                    <label>09:00 AM</label>
+                    <span>-</span>
+                    <label>08:00 PM</label>
+                    
+                </div>
+
+            </div>
+
+        </div>
+        <div class="headerTop-end">
+
+            <span *ngIf="language == 'en'" (click)="setLanguage('ar')">AR</span>
+            <span *ngIf="language == 'ar'" (click)="setLanguage('en')">EN</span>
+            <button class="orange">Book now</button>
+
+        </div>
+
+    </div>
+    <div class="divider"></div>
+    <div class="headerBottom container">
+        
+        <div class="headerBottom-start">
+
+            <div class="mobileMenuBtn" (click)="openBurgerMenu()" type="button">
+                <mat-icon>menu</mat-icon>
+            </div> 
+            <a [routerLink]="['/landing-page']" [routerLinkActive]="'active'"
+            (click)="scrollToSection(landingPageSetionsNameEnum.HOME)">HOME</a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.OVERVIEW)">OVERVIEW</a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.ABOUTITINERARY)">ABOUT ITINERARY</a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.OURPRICING)">OUR PRICING</a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.INCLUSIONS)">INCLUSIONS</a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.EXCLUSIONS)">EXCLUSIONS</a>
+
+        </div>
+        <div class="headerBottom-end">
+
+            <a href="">
+                <img [src]="'/assets/images/facebook.png'" />
+            </a>
+            <a href="">
+                <img [src]="'/assets/images/ins.png'" />
+            </a>
+            <a href="">
+                <img [src]="'/assets/images/twi.png'" />
+            </a>
+
+        </div>
+
+    </div> 
+
+</header>

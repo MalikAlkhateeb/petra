@@ -1,0 +1,23 @@
+<div class="burgerMenu" [class.show]="isOpen" (click)="closeBurgerMenu()">
+
+    <div class="burgerMenu-container"  (click)="onBoxClick($event)">
+
+        <div class="burgerMenu-container-start">
+            <mat-icon>drag_handle</mat-icon>
+        </div>
+        <div class="burgerMenu-container-end">
+
+
+            <a [routerLink]="['/landing-page']" [routerLinkActive]="'active'"
+            (click)="scrollToSection(landingPageSetionsNameEnum.HOME)">HOME</a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.OVERVIEW)">OVERVIEW</a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.ABOUTITINERARY)">ABOUT ITINERARY</a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.OURPRICING)">OUR PRICING</a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.INCLUSIONS)">INCLUSIONS</a>
+            <a (click)="scrollToSection(landingPageSetionsNameEnum.EXCLUSIONS)">EXCLUSIONS</a>
+
+        </div>
+
+    </div>
+
+</div>

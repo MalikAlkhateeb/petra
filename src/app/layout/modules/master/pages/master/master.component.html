@@ -1,0 +1,14 @@
+<div class="master">
+
+    <div class="master-start">
+        <petra-header />
+    </div>
+    <petra-burger-menu />
+     <div class="master-end">
+        <router-outlet /> 
+        <petra-footer />
+     </div>
+
+</div>
+
+<petra-loader *ngIf="isBusy" />
